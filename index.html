@@ -152,7 +152,7 @@
 							</svg>
 						</a>
 					</div>
-					<input type="checkbox" hidden id="header__search-mobile--checkbox">
+					
 					<div class="header__search">
 						<div class="header__search-input-wrap">
 							<input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
@@ -191,6 +191,8 @@
 						</button>
 					</div>
 					<div class="header__cart">
+						<label for="checkcart" class="header__cart-checkcart"></label>
+						<input type="checkbox" hidden id="checkcart"></input>
 						<div class="header__cart-click">
 							<i class="header__cart-icon fas fa-shopping-cart"></i>
 							<span class="header__cart-notifi">3</span>
@@ -378,6 +380,26 @@
 				</a></li>
 			</ul>
 		</header>
+		<input type="checkbox" hidden name="checkcart" id="header__search-mobile--checkbox">
+		<div class="header__search-c">
+						<div class="header__search-input-wrap">
+							<input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+							<div class="header__search-history">
+								<h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+								<ul class="header__search-history-list">
+									<li class="header__search-history-item">
+										<a href="">Mỹ phẩm</a>
+									</li>
+									<li class="header__search-history-item">
+										<a href="">Kem dưỡng da</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<button class="header__search-btn">
+							<i class="header__search-btn-icon fas fa-search"></i>
+						</button>
+					</div>
 		<div class="app__container">
 			<div class="grid wide">
 				<div class="row sm-gutter app__content">
