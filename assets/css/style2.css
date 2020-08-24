@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #999;
+}
+
+.main {
+    width: 1200px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+    background: #fff;
+}
+label{
+    display: block;
+}
+.nav__pc,.nav__mobile{
+    display: none;
+    transition: all 0.7s;
+    background: green;
+}
+#check:checked ~ .nav__pc,#checkid:checked ~ .nav__mobile,#checkbox:checked ~ .nav__pc{
+    display: block;
+}

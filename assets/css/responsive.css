@@ -1,0 +1,143 @@
+/*Mobile and Tablet*/
+@media (max-width: 1023px){
+	:root{
+		--header-height:68px;
+		--navbar-height:0px;
+	}
+	.hide-on-mobile-tablet,.header__cart-history-cart::after{
+		display: none;
+	}
+	.header{
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+	.header__cart-history-cart{
+	    position: fixed;
+	    top: var(--header-height);
+	    right: 0px;
+	    width: 100%;
+	    padding: 0 calc((100% - 644px) / 2);
+	}
+	.app__container{
+		margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+	}
+	.header__short-bar{
+		display: flex;
+	}
+	.header__list-mobile{
+		display: block;
+	}
+	.col.l-2-4.m-6{
+		text-align: center;
+	}
+	.footer__active ul{
+	    display: flex;
+    	flex-direction: column;
+    	align-items: center;
+	}
+	.footer__download{
+		justify-content: center;
+	}
+	.footer__item-link--active{
+		margin-right: 10px
+	}
+	.click__up{
+		display: block;
+	}
+}
+@media (max-width: 1023px){
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+}
+/*Pc*/
+@media (min-width: 1024px) {
+	.category__user-mobile{
+		display: none;
+	}
+}
+/*Screen <=500px*/
+@media (max-width: 500px) {
+	.category__user-mobile{
+		width: 70%;
+	}
+}
+@media (max-width: 400px) {
+	.home__product-item-sold{
+		font-size: 1.2rem;
+	}
+	.home__product-item-price-old{
+		font-size: 1.2rem;
+	}
+	.home__product-item-price-current{
+		font-size: 1.4rem;
+	}
+}
+/*Tablet*/
+@media (min-width: 740px) and (max-width: 1023px){
+	.hide-on-tablet{
+		display: none;
+	}
+	.header__logo{
+		width: 135px
+	}
+	.header__logo-img{
+		width: 100px;
+	}
+	.header__cart{
+		width: 65px;
+		text-align: right;
+	}
+	.category__user-mobile{
+		width: 50%;
+	}
+}
+/*Mobile*/
+@media (max-width: 739px){
+	.hide-on-mobile{
+		display: none;
+	}
+	.header-with-search{
+		justify-content: space-between;
+		margin:0 9px 0 50px;
+	}
+	.header__logo,.header__cart{
+		width: unset;
+	}
+	.header__search-mobile{
+		display: block;
+	 }
+	.header__search{
+    position: fixed;
+    top: calc(var(--header-height) / 2);
+    z-index: 1;
+    left: 0;
+    right: 0;
+    height: 50px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 0 12px;
+    transition: top linear 0.4s,opacity linear 0.3s 0.2s,visibility 0.01s linear;
+    opacity: 0;
+    visibility: hidden;
+	}
+	#header__search-mobile--checkbox:checked ~ .header__search{
+		top: var(--header-height);
+		visibility: visible;
+		transition-duration:0.3s;
+		opacity: 1;/*trên có 0 thì checked vào phải bắt buộc có 1*/
+	}
+	.pagination_item {
+		margin: 0;
+	}
+	.pagination_item-link{
+		--height: 28px;
+		font-size: 1.6rem;
+		min-width: 36px;
+	}
+	.app__content{
+		margin: 0 4px;
+	}
+}
