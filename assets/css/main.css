@@ -75,7 +75,7 @@
     display: none;
     width: 28px;
     height: 28px;
-    z-index: 60;
+    z-index: 20;
     transform: rotate(0deg);
     transition: transform 0.4s linear;
 }
@@ -545,7 +545,10 @@
 	cursor: pointer;
 	display: none;
 	position: relative;
-	z-index: 60;
+	z-index: 20;
+}
+.header__search-c{
+	display: none;
 }
 .category__user-mobile{
 	position: fixed;
@@ -677,7 +680,7 @@
 	display: block;
 	line-height: 0;/*định dạng sẵn html đã có line height*/
 	position: relative;
-	z-index: 60;
+	z-index: 20;
 }
 .header__search{
 	flex: 1;
