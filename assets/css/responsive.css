@@ -47,6 +47,19 @@
 	.click__up{
 		display: block;
 	}
+	.header__cart-checkcart{
+		width: 43px;
+	    height: 43px;
+	    display: block;
+	    position: absolute;
+	    z-index: 22;
+	}
+	#checkcart:checked ~ .header__cart-click .header__cart-history-cart{
+		display: block;
+	}
+	.header__cart-click::before{
+		display: none;
+	}
 }
 @media (max-width: 1023px){
 	::-webkit-scrollbar {
@@ -111,23 +124,30 @@
 		display: block;
 	 }
 	.header__search{
-    position: fixed;
-    top: calc(var(--header-height) / 2);
-    z-index: 1;
-    left: 0;
-    right: 0;
-    height: 50px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    padding: 0 12px;
-    transition: top linear 0.4s,opacity linear 0.3s 0.2s,visibility 0.01s linear;
-    opacity: 0;
-    visibility: hidden;
+		display: none;
 	}
-	#header__search-mobile--checkbox:checked ~ .header__search{
+	.header__search-c{
+	    position: fixed;
+	    top: calc(var(--header-height) / 2);
+	    z-index: 101;
+	    left: 0;
+	    right: 0;
+	    height: 50px;
+	    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	    padding: 0 12px;
+	    transition: z-index linear 0.2s,transform linear 0.2s,top linear 0.2s,opacity 0.05s;
+	    opacity: 0;
+	    flex: 1;
+	    background-color: var(--white-color);
+	    border-radius: 2px;
+	    align-items: center;
+	    display: flex;
+	}
+	#header__search-mobile--checkbox:checked ~ .header__search-c{
 		top: var(--header-height);
-		visibility: visible;
-		transition-duration:0.3s;
-		opacity: 1;/*trên có 0 thì checked vào phải bắt buộc có 1*/
+	    transition-duration: 0.2s;
+	    z-index: 101;
+	    opacity: 1;/*trên có 0 thì checked vào phải bắt buộc có 1*/
 	}
 	.pagination_item {
 		margin: 0;
@@ -139,5 +159,17 @@
 	}
 	.app__content{
 		margin: 0 4px;
+	}
+	@keyframes searchMobile {
+		from{
+			opacity: 0;
+			top: calc(var(--header-height) / 2);
+			z-index: 0;
+		}
+		 to{
+		 	top: var(--header-height);
+		 	opacity: 1;
+		 	z-index: 101;
+		 }
 	}
 }
