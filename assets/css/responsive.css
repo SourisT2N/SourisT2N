@@ -129,7 +129,7 @@
 	.header__search-c{
 	    position: fixed;
 	    top: calc(var(--header-height) / 2);
-	    z-index: 101;
+	    z-index: 0;
 	    left: 0;
 	    right: 0;
 	    height: 50px;
