@@ -26,6 +26,7 @@
 	}
 	.header__short-bar{
 		display: flex;
+		-webkit-tap-highlight-color: transparent;
 	}
 	.header__list-mobile{
 		display: block;
@@ -60,9 +61,18 @@
 	.header__cart-click::before{
 		display: none;
 	}
-        .header__cart-history-cart::before{
-                display:none;
-        }
+	.header__cart-click:hover .header__cart-history-cart{
+		display: none;
+	}
+	.app__content{
+		padding-top: 1rem;
+	}
+	.category__products{
+	   display: block;
+	}
+	.category__products-item a:focus{
+		filter: brightness(95%);
+	}
 }
 @media (max-width: 1023px){
 	::-webkit-scrollbar {
@@ -138,7 +148,7 @@
 	    height: 50px;
 	    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 	    padding: 0 12px;
-	    transition: z-index linear 0.2s,transform linear 0.2s,top linear 0.2s,opacity 0.05s;
+	    transition: transform linear 0.2s,top linear 0.2s,opacity 0.05s;
 	    opacity: 0;
 	    flex: 1;
 	    background-color: var(--white-color);
@@ -148,7 +158,7 @@
 	}
 	#header__search-mobile--checkbox:checked ~ .header__search-c{
 		top: var(--header-height);
-	    transition-duration: 0.2s;
+	    transition-duration: 0.05s;
 	    z-index: 101;
 	    opacity: 1;/*trên có 0 thì checked vào phải bắt buộc có 1*/
 	}
