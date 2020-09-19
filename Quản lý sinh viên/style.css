@@ -12,6 +12,7 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -46,14 +47,19 @@ h1{
     box-shadow: 0 0 10px #10dede;
     border-radius: 5px;
     background: rgb(87 247 232 / 0.3);
-    padding: 10px;
+    padding-top: 10px;
+}
+
+.form {
+  margin: 10px;
 }
 
 .form-group {
     height: 40px;
-    text-align: center;
     line-height: 40px;
     margin: 10px 0 0;
+    position: relative;
+
 }
 
 label {
@@ -71,6 +77,9 @@ label.warning {
 .form-input {
     padding: 10px;
     border-radius: 50px;
+    width: 40%;
+    height: 35px;
+    font-size: 13px;
     outline: none;
     border: 1px solid rgb(104 239 108 / 80%);
     box-shadow: inset 0px 0px 30px 0px rgb(111 239 103 / 60%), 0 0 9px 0px #ffade9;
@@ -100,15 +109,56 @@ button.btn:hover {
 }
 
 .add-btn {
-    left: 45%;
+    left: 15%;
     top: 25px;
     transform: translateX(-50%);
 }
 
 .clear-btn {
-    left: 70%;
-    top: -32px;
+    left: 40%;
+    top: -42px;
     transform: translateX(-50%);
+}
+
+.error-group {
+    position: absolute;
+    top: 0;
+    left: 48%;
+    transform: translateX(-48%);
+    display: none;
+}
+
+.error-group.out {
+  display: block;
+}
+
+.error-group i {
+    color: #ff000078;
+    font-size: 15px;
+}
+
+.error-group i:hover ~ .errorM{
+    visibility: visible;
+    opacity: 1;
+}
+
+.errorM {
+    position: absolute;
+    top: -10px;
+    left: 4px;
+    background: hsla(0, 0%, 100%, 0.56);
+    width: 200px;
+    border-radius: 50px;
+    height: 20px;
+    color: #ff0000b8;
+    line-height: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+span.errorMessage {
+    margin-left: 10px;
+    font-size: 13px;
 }
 
 table {
