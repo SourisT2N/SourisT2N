@@ -4,69 +4,98 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" type="text/css">
-	<title>Quản Lý Sinh Viên</title>
+	<title>Student Manager</title>
 	<link
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
 	/>
+	<link rel="stylesheet" href="grid.css" type="text/css">
+	<link rel="stylesheet" href="responsive.css" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-		<h1>QUẢN LÝ SINH VIÊN</h1>
-		<div class="main">
-			<form action="" class="form">
-				<div class="form-group">
-					<label for="name">Tên Sinh Viên</label>
-					<input type="text" id="name" class="form-input">
-					<div class="error-group">
-						<i class="fas fa-exclamation"></i>
-						<div class="errorM">
-							<span class="errorMessage"></span>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="address">Địa Chỉ</label>
-					<input type="text" id="address" class="form-input">
-					<div class="error-group">
-						<i class="fas fa-exclamation"></i>
-						<div class="errorM">
-							<span class="errorMessage"></span>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="code">Mã Sinh Viên</label>
-					<input type="text" id="code" class="form-input">
-					<div class="error-group">
-						<i class="fas fa-exclamation"></i>
-						<div class="errorM">
-							<span class="errorMessage"></span>
-						</div>
-					</div>
-				</div>
-				<button type="submit" class="btn add-btn">Thêm Sinh Viên</button>
-			</form>
-			<button type="submit" class="btn clear-btn">Tạo Mới Dữ Liệu</button>
+	<header class="header">
+		<div class="grid wide">
+			<div class="contents">
+				<h1>Student Manager</h1>
+			</div>
 		</div>
-		<div class="add">
-			<table>
-				<thead>
-					<tr>
-						<th>STT</th>
-						<th>Tên Sinh Viên</th>
-						<th>Địa Chỉ</th>
-						<th>Mã Sinh Viên</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
+	</header>
+	<div class="container grid wide">
+		<div class="main row">
+			<div class="main-right col l-8 m-12 c-12">
+				<h3>Thông Tin Sinh Viên</h3>
+				<form action="" class="form">
+					<div class="form-group">
+						<label for="name">Họ tên:</label>
+						<input type="text" id="name" placeholder="Nhập Họ Tên" class="form-input">
+						<div class="error-group">
+							<i class="fas fa-exclamation"></i>
+							<div class="errorM">
+								<span class="errorMessage"></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="address">Địa chỉ:</label>
+						<input type="text" id="address" placeholder="Nhập Địa Chỉ" class="form-input">
+						<div class="error-group">
+							<i class="fas fa-exclamation"></i>
+							<div class="errorM">
+								<span class="errorMessage"></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="code">Mã SV:</label>
+						<input type="text" id="code" placeholder="Nhập Mã Sinh Viên" class="form-input">
+						<div class="error-group">
+							<i class="fas fa-exclamation"></i>
+							<div class="errorM">
+								<span class="errorMessage"></span>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn add-btn">Thêm Sinh Viên</button>
+				</form>
+				<button type="submit" class="btn clear-btn">Xóa Tất Cả Sinh Viên</button>
+				<button type="submit" class="btn add-local">Hủy Bỏ Sửa Thông Tin</button>
+				<!-- <button type="submit" class="btn export-btn">Xuất File Excel</button> -->
+			</div>
+		</div>
+		<div class="main-search row">
+			<div class="col l-8 m-11 c-12">
+				<div class="search">
+					<input type="text" class="search-bar" placeholder="Tìm Kiếm Tên Hoặc Mã Sinh Viên"></input>
+					<button type="submit" class="btn search-btn">Search</button>
+				</div>
+			</div>
+		</div>
+		<div class="main-table row">
+			<div class="add col l-12 m-12 c-12">
+				<h3>Danh Sách Sinh Viên</h3>
+				<div class="padding">
+					<table id="table1">
+						<thead>
+							<tr>
+								<th>STT</th>
+								<th>Tên Sinh Viên</th>
+								<th>Địa Chỉ</th>
+								<th>Mã Sinh Viên</th>
+								<th>Chức Năng</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="validator.js"></script>
-	<script type="text/javascript" src="add.js"></script>
-	<!-- <script type="text/javascript" src="localStorage.js"></script> -->
+	<script type="text/javascript" src="localStorage.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="search.js"></script>
+	<script type="text/javascript" src="exportToExcel.js"></script>
 </body>
 </html>

@@ -25,21 +25,31 @@ function checkValue () {
 function checkError(selector,error){
   const label = selector.previousElementSibling;
   if(error){
-    displayError(label,selector);
+    displayError(label,selector,error);
   }
   else {
-    displayHideError(label,selector);
+    displayHideError(label,selector,error);
   }
 }
 
-function displayError (label,selector) {
+function displayError (label,selector,error) {
+  const icon = getParent(label,'.form-group').querySelector(".error-group");
+  const content = icon.querySelector(".errorM");
   label.classList.add("warning");
   selector.classList.add("danger");
+  icon.classList.add("out");
+  content.classList.remove("opacity");
+  content.querySelector("span").innerText = error;
+  const timeout = setTimeout(() => {
+    content.classList.add("opacity");
+  },5000)
 }
 
-function displayHideError (label,selector) {
+function displayHideError (label,selector,error) {
+  const icon = getParent(label,'.form-group').querySelector(".error-group");
   label.classList.remove("warning");
   selector.classList.remove("danger");
+  icon.classList.remove("out");
 }
 
 function checkName (selector) {
@@ -57,7 +67,7 @@ function checkName (selector) {
 }
 
 function checkAddress(selector) {
-  const format = /^\d+\s[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+\s[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+/g;
+  const format = /^(\d+[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s|]+[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s|])+$/;
   const value = selector.value.trim();
   const check = format.test(value.toLowerCase());
   if(value.length < 7){

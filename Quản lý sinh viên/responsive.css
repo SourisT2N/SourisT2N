@@ -1,0 +1,57 @@
+@media (min-width: 740px) and (max-width: 1023px) {
+	.clear-btn {
+		left: 77%;
+	}
+	input.search-bar{
+		width: 75%;
+	}
+	.errorM {
+		left: -185px;
+    	top: 33px;
+	}
+	.error-group {
+	    width: 85px;
+	}
+}
+
+@media (max-width: 739px) {
+	.clear-btn,.add-local {
+		left: 105px;
+		top: -23px;
+	}
+	.clear-btn.hide {
+		display: none;
+	}
+	input.search-bar {
+		width: 84%;
+	}
+	.error-group {
+	    width: 15px;
+	}
+	.errorM {
+		left: -220px;
+    top: -38px;
+	}
+	.error-group.out i {
+		left: -8px
+	}
+}
+
+@media (max-width: 1023px) {
+	button.edit-btn {
+		left: 5px
+	}
+	button.delete-btn {
+		right:	5px;
+	}
+	table {
+		margin-left: 1px;
+	}
+	h3 {
+		text-align: center;
+	}
+	.errorM.opacity {
+		visibility: visible;
+		opacity: 1;
+	}
+}
