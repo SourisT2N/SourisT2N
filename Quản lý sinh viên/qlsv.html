@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<title>Student Manager</title>
@@ -60,7 +61,16 @@
 				</form>
 				<button type="submit" class="btn clear-btn">Xóa Tất Cả Sinh Viên</button>
 				<button type="submit" class="btn add-local">Hủy Bỏ Sửa Thông Tin</button>
-				<!-- <button type="submit" class="btn export-btn">Xuất File Excel</button> -->
+				<button type="submit" class="btn export-btn">Xuất File Excel</button>
+				<div class="select">
+					<span class="select-option">Tạo Mẫu Dữ Liệu</span>
+					<select name="test-generator" id="test">
+						<option value="5">5 Sinh Viên</option>
+						<option value="10">10 Sinh Viên</option>
+						<option value="15">15 Sinh Viên</option>
+					</select>
+					<button class="btn select-btn">Tạo</button>
+				</div>
 			</div>
 		</div>
 		<div class="main-search row">
@@ -97,6 +107,7 @@
 	<script type="text/javascript" src="validator.js"></script>
 	<script type="text/javascript" src="localStorage.js"></script>
 	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="selectRandom.js"></script>
 	<script type="text/javascript" src="search.js"></script>
 	<script type="text/javascript" src="exportToExcel.js"></script>
 </body>
