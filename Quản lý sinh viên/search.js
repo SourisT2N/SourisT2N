@@ -1,7 +1,10 @@
 const inputSearch = document.querySelector(".search-bar");
-const searchBtn = document.querySelector(".search-btn");
+const formTwo = document.querySelector(".form-2");
 
-searchBtn.onclick = () => {
+formTwo.addEventListener("submit", stopEvent);
+
+function stopEvent (e) {
+	e.preventDefault();
 	valueSearch = inputSearch.value.toLowerCase();
 	const trTable = document.querySelectorAll(".add #table1 tbody tr");
 	trTable.forEach(tr => {
