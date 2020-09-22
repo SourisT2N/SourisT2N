@@ -165,7 +165,7 @@ function createNewElement(obj,id){
 	att.value = id;
 	element.setAttributeNode(att);
 	element.classList.add("trtable");
-	element.innerHTML = `<td>${count}</td>
+	element.innerHTML = `<td class="stt">${count}</td>
 						<td name="tdtable" id="nameTable">${obj.name}</td>
 						<td name="tdtable">${obj.address}</td>
 						<td name="tdtable" id="codeTable">${obj.code}</td>
@@ -247,20 +247,35 @@ function editItem () {
 		inputs[i].value = editElement[i].innerText;
 	}
 	newValue()
+	let topEdit = elementEdit.offsetTop;
+	const scrollValue = topEdit;
+	const timeScroll = setInterval(() => {
+		topEdit = topEdit - scrollValue*0.05;
+		window.scrollTo(0,topEdit)
+		if(topEdit <= 0){
+			clearInterval(timeScroll);
+		}
+	},15);
 }
 
 function deleteItem () {
 	if(!checkTt) {
 		const itemDelete = getParent(this,'tr');
+		const tbodyItem = getParent(itemDelete,'tbody');
+
 		const id = itemDelete.getAttribute("data-id");
 		let replacer =  itemDelete;
 		let counters = 0;
 		for(counters = 0;replacer = replacer.previousElementSibling;counters++){};
 		arr.splice(counters,1);
-		count--;
 		itemDelete.remove();
 		removeLocalStorage(id);
-		loadTableAgain();
+		const tdItem = tbody.querySelectorAll('tr td.stt');
+		count--;
+		for(i = 1;i <= count;i++){
+			tdItem[i - 1].innerText = i;
+		}
+		
 	}
 	else {
 		alert("Vui Lòng Chỉnh Sửa Thông Tin Trước Khi Xóa");

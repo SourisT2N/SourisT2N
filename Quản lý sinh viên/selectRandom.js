@@ -47,6 +47,44 @@ const students = [
 		{
 			name: 'Lý Kiệt',
 		},
+		{
+			name: 'Bích Thủy',
+		},
+		{
+			name: 'Ngọc Thy',
+		},
+		{
+			name: 'Impurity Statue',
+		},
+		{
+			name: 'Blight Texts',
+		},
+		{
+			name: 'Anarchy Lamp',
+		},
+		{
+			name: 'Lamp of Metamorphosis',
+		},
+		{
+			name: 'Sword of Teleportation',
+		},
+		{
+			name: 'Cup of Gold',
+		},
+		{
+			name: 'Inscriptions of Malediction',
+		},
+		{
+			name: 'Gauntlet of Curses',
+		},
+		{
+			name: 'Chest of Gold',
+		},
+		{
+			name: 'Circlet of All-Seeing',
+		},{
+			name: 'Band of Vengeance',
+		},
 	]
 const addressStudents = ['Mạc Đỉnh Chi','Ngô Gia Tự','Nguyễn Trãi','Nguyễn Huệ','Quang Trung',
 	'Nguyễn Tất Thành','Ngô Sỹ Liên','Phù Đổng','Trần Nhật Duật','Lê Hồng Phong','Lê Lợi','Trần Phú',
@@ -83,6 +121,15 @@ selectBtn.onclick = () => {
 		}
 	}
 	else if(selectValue == 15) {
+		const obj = randomSelectOption(selectValue);
+		for(let i = 0;i < obj.length;i++){
+			id = new Date().getTime() + Math.floor(Math.random()*100);
+			createNewElement(obj[i],id);
+			addLocalStorage(obj[i],id);
+			arr.push(obj[i]);
+		}
+	}
+	else if(selectValue == 20) {
 		const obj = randomSelectOption(selectValue);
 		for(let i = 0;i < obj.length;i++){
 			id = new Date().getTime() + Math.floor(Math.random()*100);
