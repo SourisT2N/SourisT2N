@@ -1,54 +1,57 @@
 const students = [
-	{
-		name: 'Bùi Linh Chi',
-	},
-	{
-		name: 'Trịnh Thị Ái Phi',
-	},
-	{
-		name: 'Trần Nam Phương',
-	},
-	{
-		name: 'Đỗ Hồng Hạnh',
-	},
-	{
-		name: 'Nguyễn Hà My',
-	},
-	{
-		name: 'Phạm Nguyễn Bảo Ngọc',
-	},
-	{
-		name: 'Nguyễn Thị Mai Hương',
-	},
-	{
-		name: 'Trần Quốc Tuấn',
-	},
-	{
-		name: 'Trịnh Hoàng',
-	},
-	{
-		name: 'Lý Thiện',
-	},
-	{
-		name: 'Lý Hải',
-	},
-	{
-		name: 'Bùi Thị Huệ',
-	},
-	{
-		name: 'Nguyễn Chí Linh',
-	},
-	{
-		name: 'Trần Văn Công',
-	},
-	{
-		name: 'Lý Kiệt',
-	},
-]
-
+		{
+			name: 'Bùi Chí Thiện',
+		},
+		{
+			name: 'Bùi Linh Chi',
+		},
+		{
+			name: 'Trịnh Thị Ái Phi',
+		},
+		{
+			name: 'Trần Nam Phương',
+		},
+		{
+			name: 'Đỗ Hồng Hạnh',
+		},
+		{
+			name: 'Nguyễn Hà My',
+		},
+		{
+			name: 'Phạm Nguyễn Bảo Ngọc',
+		},
+		{
+			name: 'Nguyễn Thị Mai Hương',
+		},
+		{
+			name: 'Trần Quốc Tuấn',
+		},
+		{
+			name: 'Trịnh Hoàng',
+		},
+		{
+			name: 'Lý Thiện',
+		},
+		{
+			name: 'Lý Hải',
+		},
+		{
+			name: 'Bùi Thị Huệ',
+		},
+		{
+			name: 'Nguyễn Chí Linh',
+		},
+		{
+			name: 'Trần Văn Công',
+		},
+		{
+			name: 'Lý Kiệt',
+		},
+	]
 const addressStudents = ['Mạc Đỉnh Chi','Ngô Gia Tự','Nguyễn Trãi','Nguyễn Huệ','Quang Trung',
-'Nguyễn Tất Thành','Ngô Sỹ Liên','Phù Đổng','Trần Nhật Duật','Lê Hồng Phong','Lê Lợi','Trần Phú',
-'Trịnh Phong','Đinh Tiên Hoàng','Đinh Bộ Lĩnh'];
+	'Nguyễn Tất Thành','Ngô Sỹ Liên','Phù Đổng','Trần Nhật Duật','Lê Hồng Phong','Lê Lợi','Trần Phú',
+	'Trịnh Phong','Đinh Tiên Hoàng','Đinh Bộ Lĩnh'];
+
 
 const selectBtn = document.querySelector(".select-btn");
 const selectOption = document.getElementById("test");
@@ -82,7 +85,7 @@ selectBtn.onclick = () => {
 	else if(selectValue == 15) {
 		const obj = randomSelectOption(selectValue);
 		for(let i = 0;i < obj.length;i++){
-			id = new Date().getTime() + Math.floor(Math.random()*101);
+			id = new Date().getTime() + Math.floor(Math.random()*100);
 			createNewElement(obj[i],id);
 			addLocalStorage(obj[i],id);
 			arr.push(obj[i]);
@@ -95,11 +98,14 @@ function randomSelectOption (value) {
 	let codes = '';
 	let arrStudents = [];
 	const studentsLength = students.length;
-	for(let i = 0;i < studentsLength;i++){
-		let j = Math.floor(Math.random()*(studentsLength - 1));
+	for(let i = 0;true;i++){
+		let j = Math.floor(Math.random()*studentsLength);
 		mid = students[i];
 		students[i] = students[j];
 		students[j] = mid;
+		if(i == studentsLength - 1){
+			i = 0;
+		}
 		if(arrStudents.length > 0 && arrStudents.length < Number(value)){
 			const checkStudents = arrStudents.some(item => item.name.includes(students[i].name)||item.address.includes(students[i].address));
 			if(!checkStudents) {
@@ -114,7 +120,7 @@ function randomSelectOption (value) {
 	const lengthStudents = arrStudents.length;
 	let countCode = 0;
 	const arrCode = [1,2,3,4,5,6,7,8,9]
-	for(let i = 0;i < students.length;i++){
+	for(let i = 0;true;i++){
 		for(let j = 1;j <= 8;j++){
 			codes += Math.floor(Math.random()*9 + 1);
 		}
