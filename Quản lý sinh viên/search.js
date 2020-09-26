@@ -14,10 +14,7 @@ function stopEvent (e) {
 			if(nameChild.innerText.toLowerCase().includes(valueSearch) || codeChild.innerText.toLowerCase().includes(valueSearch)) {
 				tr.style.display = 'table-row';
 			}
-			else {
-				tr.style.display = 'none';
-			}
 		}
-		else tr.style.display = 'table-row';
+		else tr.style.display = 'none';
 	})
 }
