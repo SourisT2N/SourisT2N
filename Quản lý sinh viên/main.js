@@ -143,13 +143,11 @@ function arrValue () {
 				countEdit = 0;
 				return undefined;
 			}
-			else {
-				for(let j = 0;j < arr.length - 1;j++){
-					if(j > 0 && arr[j].code == obj.code) {
-						countEdit = 1;
-						return undefined;
-					}
-				}
+		}
+		for(let j = 0;j < arr.length;j++){
+			if(arr[j].code == obj.code && j !== nutEdit) {
+				countEdit = 1;
+				return undefined;
 			}
 		}
 	}
@@ -217,6 +215,7 @@ function newValue () {
 function clearItem () {
 	const itemsClear = document.querySelectorAll(".add table tbody tr");
 	localStorage.clear();
+	cancelBtn.classList.remove("display");
 	if(itemsClear.length > 0){
 		Array.from(itemsClear).forEach(item => {
 			item.remove();
@@ -275,7 +274,7 @@ function deleteItem () {
 		for(i = 1;i <= count;i++){
 			tdItem[i - 1].innerText = i;
 		}
-		
+
 	}
 	else {
 		alert("Vui Lòng Chỉnh Sửa Thông Tin Trước Khi Xóa");
