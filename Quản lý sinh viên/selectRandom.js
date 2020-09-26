@@ -53,38 +53,6 @@ const students = [
 		{
 			name: 'Ngọc Thy',
 		},
-		{
-			name: 'Impurity Statue',
-		},
-		{
-			name: 'Blight Texts',
-		},
-		{
-			name: 'Anarchy Lamp',
-		},
-		{
-			name: 'Lamp of Metamorphosis',
-		},
-		{
-			name: 'Sword of Teleportation',
-		},
-		{
-			name: 'Cup of Gold',
-		},
-		{
-			name: 'Inscriptions of Malediction',
-		},
-		{
-			name: 'Gauntlet of Curses',
-		},
-		{
-			name: 'Chest of Gold',
-		},
-		{
-			name: 'Circlet of All-Seeing',
-		},{
-			name: 'Band of Vengeance',
-		},
 	]
 const addressStudents = ['Mạc Đỉnh Chi','Ngô Gia Tự','Nguyễn Trãi','Nguyễn Huệ','Quang Trung',
 	'Nguyễn Tất Thành','Ngô Sỹ Liên','Phù Đổng','Trần Nhật Duật','Lê Hồng Phong','Lê Lợi','Trần Phú',
