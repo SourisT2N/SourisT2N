@@ -10,11 +10,9 @@ function stopEvent (e) {
 	trTable.forEach(tr => {
 		const nameChild = tr.querySelector("#nameTable");
 		const codeChild = tr.querySelector("#codeTable");
-		if(valueSearch) {
-			if(nameChild.innerText.toLowerCase().includes(valueSearch) || codeChild.innerText.toLowerCase().includes(valueSearch)) {
+		if(nameChild.innerText.toLowerCase().includes(valueSearch.trim()) || codeChild.innerText.toLowerCase().includes(valueSearch.trim())) {
 				tr.style.display = 'table-row';
 			}
-		}
 		else tr.style.display = 'none';
 	})
 }
