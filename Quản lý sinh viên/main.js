@@ -245,6 +245,18 @@ function editItem () {
 	for(let i = 0;i < lengthInner;i++) {
 		inputs[i].value = editElement[i].innerText;
 	}
+	Array.from(inputs).forEach(item => {
+		const label = item.previousElementSibling;
+		if(item.id == 'name'){
+			displayHideError(label,item);
+		}
+		else if(item.id == 'address'){
+			displayHideError(label,item);
+		}
+		else if(item.id == 'code'){
+			displayHideError(label,item);
+		}
+	})
 	newValue()
 	let topEdit = elementEdit.offsetTop;
 	const scrollValue = topEdit;
