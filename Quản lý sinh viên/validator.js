@@ -45,7 +45,7 @@ function displayError (label,selector,error) {
   },5000)
 }
 
-function displayHideError (label,selector,error) {
+function displayHideError (label,selector) {
   const icon = getParent(label,'.form-group').querySelector(".error-group");
   label.classList.remove("warning");
   selector.classList.remove("danger");
