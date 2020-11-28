@@ -185,3 +185,132 @@ h1 span
 ul.list{
     list-style: none;
 }
+
+.main-features{
+    background-color: #202d4e;
+    padding: 5rem 0;
+}
+
+.wrapper-features{
+    width: 1065px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.content-features{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 3rem;
+    padding: 32px 0;
+}
+
+ul.list-features{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 457px;
+}
+
+.item-features{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+.feature__title{
+    font-size: 22px;
+    margin: 0 0 0.5rem;
+    color: white;
+}
+
+.feature__desc{
+    font-size: 20px;
+    color: white;
+    opacity: 0.9;
+}
+
+svg{
+    margin-top: -5.3rem;
+    margin-left: 2rem;
+    width: 115px;
+}
+
+.item-features div{
+    margin-left: 2rem;
+}
+
+.main-information{
+    padding: 5rem 0;
+    background: #e6f4f1;
+}
+
+.wrapper-information{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 976px;
+}
+
+.title-information{
+    color: #3864d9;
+    padding: 32px 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+.image-person{
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-right: 0.7rem;
+}
+
+.all-person{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.raiser{
+    flex-basis: 48%;
+    margin-bottom: 20px;
+}
+
+.raiser:last-child{
+    margin-bottom: 0;
+}
+
+.person{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+blockquote{
+    width: 100%;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 7px;
+    position: relative;
+}
+
+blockquote::before{
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: -35px;
+}
