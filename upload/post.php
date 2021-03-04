@@ -7,7 +7,7 @@
 		$extension = $arr[count($arr) - 1];
 		$fileAddress = $file['tmp_name'][0];
 		x:$fileName = uniqid($time."_",true);
-		$filePath = './upload/'.$fileName.".$extension";
+		$filePath = 'https://sourist2n.github.io/SourisT2N/upload/upload/'.$fileName.".$extension";
 		if(file_exists($filePath))
 			goto x;
 		move_uploaded_file($fileAddress,$filePath);
