@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<title>Upload File</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="frame">
+		<div class="center">
+			<div class="title">
+				<h1>Drop file to upload</h1>
+			</div>
+
+			<div class="dropzone">
+				<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+				<input type="file" class="upload-input" name="file[]" />
+			</div>
+			<div class="btn">
+				<span class="btn-content">0%</span>
+				<div class="btn-progress"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const str = "image/jpeg";
+		$('.upload-input').change(function() {
+			let file = this.files[0];
+			let check = file.type === str;
+			if(check)
+			{
+				let fdt = new FormData();
+				fdt.append('file[]',file);
+				$.ajax({
+					url: './post.php',
+					type: 'POST',
+					data: fdt,
+					contentType: false,
+					cache: false,
+					processData: false,
+					async: true,
+					xhr: function() {
+						let myXhr = $.ajaxSettings.xhr();
+						if(myXhr.upload)
+						{
+							myXhr.upload.addEventListener('progress', uploadFile, false)
+						}
+						return myXhr;
+					},
+					success: function(res,x,y)
+					{
+						if(y.readyState == 4 && y.status == 200)
+						{
+							$('.upload-icon').attr('src',res);
+							$('.upload-icon').css('object-fit: cover')
+						}
+					}
+				})
+			}
+		})
+		function uploadFile(e)
+		{
+			let percent = 0;
+			let total = e.total;
+			let position = e.loaded || e.position;
+			if(e.lengthComputable)
+				percent = Math.round(position / total * 100);
+			$('.btn-content').text(percent + "%");
+			$('.btn-progress').css("width",+ percent + "%");
+		}
+	</script>
+</body>
+</html>
