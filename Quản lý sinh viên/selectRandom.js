@@ -97,15 +97,6 @@ selectBtn.onclick = () => {
 			arr.push(obj[i]);
 		}
 	}
-	else if(selectValue == 20) {
-		const obj = randomSelectOption(selectValue);
-		for(let i = 0;i < obj.length;i++){
-			id = new Date().getTime() + Math.floor(Math.random()*100);
-			createNewElement(obj[i],id);
-			addLocalStorage(obj[i],id);
-			arr.push(obj[i]);
-		}
-	}
 }
 
 function randomSelectOption (value) {
