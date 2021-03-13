@@ -259,6 +259,7 @@ function editItem () {
 	})
 	newValue()
 	let topEdit = elementEdit.offsetTop;
+	console.log(topEdit);
 	const scrollValue = topEdit;
 	const timeScroll = setInterval(() => {
 		topEdit = topEdit - scrollValue*0.05;
