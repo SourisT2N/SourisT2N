@@ -1,0 +1,186 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-image:url("./body.PNG");
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	height: 100%;
+}
+
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+	background: #fff;
+}
+
+header .header-img{
+	width: 100%;
+	object-fit: cover;
+}
+
+nav{
+	border-radius: 1px;
+	box-shadow: 0 1px #c9d5da;
+	background-image: linear-gradient(#ebeff1,#d4dde2);
+}
+
+nav ul{
+	display: flex;
+}
+
+ul{
+	list-style: none;
+}
+
+nav ul li {
+    position: relative;
+    padding: 8px 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.list-item.active{
+	color: red;
+}
+
+.list-item::after { 
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(#d8e0e4,#ccd6dc)
+}
+
+main{
+	margin-top: 7px;
+	display: flex;
+}
+
+.main-left{
+	background: #f7fafc;
+	padding: 10px 15px;
+	flex-basis: 70%;
+	margin-right: 10px;
+}
+
+.left__top{
+	margin-bottom: 20px;
+}
+
+h3{
+	font-size: 2rem;
+    font-weight: 300;
+    color: #867b7b;
+}
+
+.left__top span{
+	color: #9c9b9b;
+}
+
+.left__top p{
+	display: flex;
+	margin: 10px 0;
+}
+
+.left__top p span{
+	color: #1734ff;
+	font-size: 20px;
+}
+
+table tr:nth-child(1){
+	background: #d3dfee;
+}
+
+table tr th,table tr td{
+	padding: 5px;
+	text-align: left;
+}
+
+.main-right{
+	flex-basis: 30%;
+	background: #f7f7f2;
+	height: 410px;
+}
+
+.right__top ul li{
+	padding: 10px 0 10px 10px;
+	border-bottom: 1px solid #eeeee3;
+	color: #696262;
+}
+
+.right__top ul li:nth-child(1),
+.right__top ul li:nth-child(4){
+	font-weight: bold;
+}
+
+.right__top ul li:nth-child(2){
+	color: red;
+}
+
+.right__top ul li:last-child{
+	border-bottom: 1px solid #c2c2ba;
+}
+
+.right__bottom{
+	padding: 10px;
+}
+
+.right__bottom h3{
+	font-weight: bold;
+	font-size: 20px;
+	color: black;
+	padding: 5px 0;
+}
+
+.form-input{
+	margin: 3px 0;
+}
+
+.form-input span{
+	display: inline-block;
+	width: 75px;
+	color: blue;
+	font-style: italic;
+}
+
+.btn{
+	padding: 10px;
+	text-align: center;
+}
+
+.btn input{
+	background: #f0f0f0;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    border: none;
+    box-shadow: 2px 1px #9c9c9c;
+    cursor: pointer;
+    margin-right: 5px;
+    color: #bd0c0c;
+    font-weight: 900;
+}
+
+.btn input:hover{
+	box-shadow: -1px -1px #9c9c9c;
+}
+
+.btn a{
+	color: #c73a3a;
+}
+
+footer{
+	padding: 10px;
+	background: #abbeca;
+	color: #fff;
+	margin-top: 5px;
+	text-align: center;
+}
